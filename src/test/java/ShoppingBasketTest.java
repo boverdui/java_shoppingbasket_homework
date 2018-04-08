@@ -18,8 +18,6 @@ public class ShoppingBasketTest {
         lanyard = new Item("Scotland lanyard", 375, 3, false);
         waterbottle = new Item("Scotland waterbottle", 500, 3, true);
         mug = new Item("Scotland Mug", 900, 5, true);
-
-
     }
 
     @Test
@@ -67,7 +65,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canGetTotalCostWithTenPercentOff() {
+    public void canGetTotalCostWithMinimumPurchase() {
         shoppingBasket1.addItem(ball);
         assertEquals(2250, shoppingBasket1.getTotalCost());
     }
@@ -79,7 +77,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canGetTotalCostWithLoyaltyCardAndTenPercentOff() {
+    public void canGetTotalCostWithLoyaltyCardAndMinimumPurchase() {
         shoppingBasket2.addItem(ball);
         assertEquals(2205, shoppingBasket2.getTotalCost());
     }
@@ -91,19 +89,19 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canGetTotalCostWithTenPercentOffAndBOGOF() {
+    public void canGetTotalCostWithMinimumPurchaseAndBOGOF() {
         shoppingBasket1.addItem(mug);
         assertEquals(2430, shoppingBasket1.getTotalCost());
     }
 
     @Test
-    public void canGetTotalCostWithLoyaltyCardAndTenPercentOffAndBOGOF() {
+    public void canGetTotalCostWithLoyaltyCardAndMinimumPurchaseAndBOGOF() {
         shoppingBasket2.addItem(mug);
         assertEquals(2381, shoppingBasket2.getTotalCost());
     }
 
     @Test
-    public void multipleItemsVariousDiscounts1() {
+    public void multipleItemsWithVariousDiscounts1() {
         shoppingBasket1.addItem(ball);
         shoppingBasket1.addItem(lanyard);
         shoppingBasket1.addItem(waterbottle);
@@ -112,7 +110,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void multipleItemsVariousDiscounts2() {
+    public void multipleItemsWithVariousDiscounts2() {
         shoppingBasket2.addItem(ball);
         shoppingBasket2.addItem(lanyard);
         shoppingBasket2.addItem(waterbottle);

@@ -39,11 +39,11 @@ public class ShoppingBasket {
                 totalCost -= item.getPrice() * (item.getQuantity() / 2);
             }
         }
-        if (totalCost > 2000) {
-            totalCost -= totalCost * 0.1;
+        if (totalCost > Discount.MINIMUMPURCHASE.minimumSpend()) {
+            totalCost -= totalCost * Discount.MINIMUMPURCHASE.percentage() * 0.01;
         }
         if (this.loyaltycard == true) {
-            totalCost -= totalCost * 0.02;
+            totalCost -= totalCost * Discount.LOYALTYCARD.percentage() * 0.01;
         }
         return totalCost;
     }

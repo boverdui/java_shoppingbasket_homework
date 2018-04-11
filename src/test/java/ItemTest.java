@@ -1,3 +1,5 @@
+import ShoppingBasket.Item;
+import ShoppingBasket.ShoppingBasket;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +11,7 @@ public class ItemTest {
 
     @Before
     public void before() {
-        ball = new Item("Scotland Rugby Ball", 2500, 1, false);
+        ball = new Item("Scotland Rugby Ball", 25.00, 1, false);
     }
 
     @Test
@@ -19,7 +21,7 @@ public class ItemTest {
 
     @Test
     public void hasPrice() {
-        assertEquals(2500, ball.getPrice());
+        assertEquals(25.00, ball.getPrice(), 0.01);
     }
 
     @Test
@@ -28,8 +30,8 @@ public class ItemTest {
     }
 
     @Test
-    public void hasDiscount() {
-        assertEquals(false, ball.hasDiscount());
+    public void hasBogof() {
+        assertEquals(false, ball.hasBogof());
     }
 
 }

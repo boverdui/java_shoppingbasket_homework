@@ -1,24 +1,24 @@
-import java.math.BigDecimal;
+package ShoppingBasket;
 
 public class Item {
 
     private String name;
-    private int price;
+    private double price;
     private int quantity;
-    private Boolean discount;
+    private Boolean bogof;
 
-    public Item (String name, int price, int quantity, Boolean discount) {
+    public Item (String name, double price, int quantity, Boolean bogof) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.discount = discount;
+        this.bogof = bogof;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return this.price;
     }
 
@@ -26,8 +26,8 @@ public class Item {
         return this.quantity;
     }
 
-    public Boolean hasDiscount() {
-        return this.discount;
+    public Boolean hasBogof() {
+        return this.bogof;
     }
 
 }

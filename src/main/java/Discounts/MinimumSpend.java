@@ -1,14 +1,9 @@
 package Discounts;
 
-import ShoppingBasket.Item;
-
-import java.util.ArrayList;
-
 public class MinimumSpend implements Discounts.IDiscount {
 
     private double fraction;
     private double threshold;
-    private double total;
     private double savings;
 
     public MinimumSpend (double fraction, double threshold) {
@@ -17,7 +12,7 @@ public class MinimumSpend implements Discounts.IDiscount {
     }
 
     @Override
-    public double calculateSavings(ArrayList<Item> items, double total) {
+    public double calculateSavings(double total) {
         if (total > threshold) {
             savings = total * fraction;
         }

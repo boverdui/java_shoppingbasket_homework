@@ -1,9 +1,5 @@
 package Discounts;
 
-import ShoppingBasket.Item;
-
-import java.util.ArrayList;
-
 public class LoyaltyCard implements Discounts.IDiscount {
 
     private double fraction;
@@ -14,7 +10,7 @@ public class LoyaltyCard implements Discounts.IDiscount {
     }
 
     @Override
-    public double calculateSavings(ArrayList<Item> items, double total) {
+    public double calculateSavings(double total) {
         savings = total * fraction;
         return savings;
     }

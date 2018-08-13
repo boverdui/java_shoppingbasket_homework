@@ -42,9 +42,12 @@ public class ShoppingBasket {
         double total = 0;
         for (Item item : this.items) {
             total += (item.getPrice() * item.getQuantity());
+            if (item.hasBogof()) {
+                total -= item.getPrice() * (item.getQuantity() / 2);
+            }
         }
         for (IDiscount discount : this.discounts) {
-            double savings = discount.calculateSavings(this.items, total);
+            double savings = discount.calculateSavings(total);
             total -= savings;
         }
         return total;

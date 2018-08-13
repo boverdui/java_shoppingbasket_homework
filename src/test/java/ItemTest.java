@@ -1,5 +1,4 @@
 import ShoppingBasket.Item;
-import ShoppingBasket.ShoppingBasket;
 import org.junit.Before;
 import org.junit.Test;
 

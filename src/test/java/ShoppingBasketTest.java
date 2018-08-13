@@ -40,7 +40,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canRemoveItemFromShoppingbasket() {
+    public void canRemoveItemFromShoppingBasket() {
         shoppingBasket.addItem(ball);
         shoppingBasket.addItem(lanyard);
         shoppingBasket.removeItem(ball);
@@ -48,7 +48,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canEmptyShoppingbasket() {
+    public void canEmptyShoppingBasket() {
         shoppingBasket.addItem(ball);
         shoppingBasket.addItem(lanyard);
         shoppingBasket.empty();
@@ -67,7 +67,7 @@ public class ShoppingBasketTest {
         shoppingBasket.addItem(lanyard);
         shoppingBasket.addItem(waterbottle);
         shoppingBasket.addItem(mug);
-        assertEquals(73.25, shoppingBasket.getTotal(), 0.01);
+        assertEquals(73.25, shoppingBasket.calculateTotal(), 0.01);
     }
 
     @Test
@@ -77,28 +77,28 @@ public class ShoppingBasketTest {
         shoppingBasket.addItem(waterbottle);
         shoppingBasket.addItem(mug);
         shoppingBasket.applyDiscount(minimumSpend);
-        assertEquals(65.93, shoppingBasket.getTotal(), 0.01);
+        assertEquals(65.93, shoppingBasket.calculateTotal(), 0.01);
     }
 
     @Test
-    public void canGetTotalWithBogofAndLoyaltyCardDiscount() {
+    public void canCalculateTotalWithBogofAndLoyaltyCardDiscount() {
         shoppingBasket.addItem(ball);
         shoppingBasket.addItem(lanyard);
         shoppingBasket.addItem(waterbottle);
         shoppingBasket.addItem(mug);
         shoppingBasket.applyDiscount(loyaltyCard);
-        assertEquals(71.79, shoppingBasket.getTotal(), 0.01);
+        assertEquals(71.79, shoppingBasket.calculateTotal(), 0.01);
     }
 
     @Test
-    public void canGetTotalWithAllDiscounts() {
+    public void canCalculateTotalWithAllDiscounts() {
         shoppingBasket.addItem(ball);
         shoppingBasket.addItem(lanyard);
         shoppingBasket.addItem(waterbottle);
         shoppingBasket.addItem(mug);
         shoppingBasket.applyDiscount(minimumSpend);
         shoppingBasket.applyDiscount(loyaltyCard);
-        assertEquals(64.61, shoppingBasket.getTotal(), 0.01);
+        assertEquals(64.61, shoppingBasket.calculateTotal(), 0.01);
     }
 
 }

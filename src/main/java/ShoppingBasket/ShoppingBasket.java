@@ -38,7 +38,7 @@ public class ShoppingBasket {
         this.discounts.add(discount);
     }
 
-    public double getTotal() {
+    public double calculateTotal() {
         double total = 0;
         for (Item item : this.items) {
             total += (item.getPrice() * item.getQuantity());
